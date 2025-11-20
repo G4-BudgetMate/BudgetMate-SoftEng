@@ -46,7 +46,10 @@ const Login = () => {
           </View>
         </TouchableOpacity>
 
-        <Text style={styles.orText}>Or login with</Text>
+        <View style={styles.orContainer}>
+          <View style={styles.orLine} />
+          <Text style={styles.orText}>Or login with</Text>
+        </View>
 
         <Text style={styles.label}>Email</Text>
         <TextInput
@@ -59,7 +62,6 @@ const Login = () => {
 
         <Text style={styles.label}>Password</Text>
 
-        {/* Password input with eye icon */}
         <View>
           <TextInput
             placeholder="Password"
@@ -81,7 +83,6 @@ const Login = () => {
           </TouchableOpacity>
         </View>
 
-        {/* Rounded custom checkbox */}
         <View style={styles.options}>
           <TouchableOpacity
             style={styles.checkboxRow}
@@ -108,7 +109,7 @@ const Login = () => {
 
         <Text style={styles.signup}>
           Don't have an account?
-          <Link style={styles.signUpLink} href="/Signup"> Sign Up</Link>
+          <Link style={styles.signUpLink} href="/Signup"> Sign up</Link>
         </Text>
       </View>
     </View>
@@ -180,11 +181,27 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
 
-  orText: { 
-    textAlign: 'center', 
-    marginTop: 10,
-    marginBottom: 15,
-    color: '#555', 
+  orContainer: {
+    marginVertical: 15,
+    alignItems: 'center',
+    position: 'relative',
+  },
+
+  orLine: {
+    position: 'absolute',
+    top: '50%',
+    left: 0,
+    right: 0,
+    height: 1,
+    backgroundColor: '#ccc',
+  },
+
+  orText: {
+    backgroundColor: '#fff', 
+    paddingHorizontal: 10,
+    color: '#555',
+    fontSize: 14,
+    textAlign: 'center',
   },
 
   label: {  
