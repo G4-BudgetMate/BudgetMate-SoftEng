@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TextInput, Image, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TextInput, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
 import { scale, verticalScale, moderateScale } from '../../src/responsive';
@@ -18,108 +18,110 @@ const Earn = () => {
     return (
         <SafeAreaView style={styles.container}>
             <StatusBar style="light" backgroundColor={COLORS.background} />
+            <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
 
-            {/* Search bar */}
-            <View style={styles.searchContainer}>
-                <Ionicons name="search" size={moderateScale(18)} color="#A0A0A0" />
-                <TextInput
-                    placeholder="Find Job"
-                    placeholderTextColor="#A0A0A0"
-                    style={styles.searchInput}
-                />
-            </View>
-
-            {/* Job Cards */}
-            <View style={styles.cardsRow}>
-
-                {/* Freelance Writing */}
-                <View style={styles.card}>
-                    <View style={styles.badge}>
-                        <Text style={styles.badgeText}>Easy</Text>
-                    </View>
-
-                    <Text style={styles.cardTitle}>Freelance Writing</Text>
-                    <Text style={styles.cardDesc}>Write articles for blogs and publications</Text>
-
-                    <View style={styles.cardDetails}>
-                        <Text style={styles.detailText}>₱ 50–200 per article</Text>
-                        <Text style={styles.detailText}>5–10 hrs/week</Text>
-                    </View>
-
-                    <View style={styles.tagRow}>
-                        <Text style={styles.tag}>Writing</Text>
-                        <Text style={styles.tag}>Remote</Text>
-                        <Text style={styles.tag}>Flexible</Text>
-                    </View>
-
-                    <TouchableOpacity 
-                        style={styles.learnMoreBtn}
-                        activeOpacity={0.7}
-                        onPress={() => console.log("Learn More clicked")}
-                    >
-                        <Text style={styles.learnMoreText}>Learn More</Text>
-                    </TouchableOpacity>
+                {/* Search bar */}
+                <View style={styles.searchContainer}>
+                    <Ionicons name="search" size={moderateScale(18)} color="#A0A0A0" />
+                    <TextInput
+                        placeholder="Find Job"
+                        placeholderTextColor="#A0A0A0"
+                        style={styles.searchInput}
+                    />
                 </View>
 
-                {/* Virtual Assistant */}
-                <View style={styles.card}>
-                    <View style={styles.badge}>
-                        <Text style={styles.badgeText}>Easy</Text>
+                {/* Job Cards */}
+                <View style={styles.cardsRow}>
+
+                    {/* Freelance Writing */}
+                    <View style={styles.card}>
+                        <View style={styles.badge}>
+                            <Text style={styles.badgeText}>Easy</Text>
+                        </View>
+
+                        <Text style={styles.cardTitle}>Freelance Writing</Text>
+                        <Text style={styles.cardDesc}>Write articles for blogs and publications</Text>
+
+                        <View style={styles.cardDetails}>
+                            <Text style={styles.detailText}>₱ 50–200 per article</Text>
+                            <Text style={styles.detailText}>5–10 hrs/week</Text>
+                        </View>
+
+                        <View style={styles.tagRow}>
+                            <Text style={styles.tag}>Writing</Text>
+                            <Text style={styles.tag}>Remote</Text>
+                            <Text style={styles.tag}>Flexible</Text>
+                        </View>
+
+                        <TouchableOpacity
+                            style={styles.learnMoreBtn}
+                            activeOpacity={0.7}
+                            onPress={() => console.log("Learn More clicked")}
+                        >
+                            <Text style={styles.learnMoreText}>Learn More</Text>
+                        </TouchableOpacity>
                     </View>
 
-                    <Text style={styles.cardTitle}>Virtual Assistant</Text>
-                    <Text style={styles.cardDesc}>
-                        Help businesses with administrative tasks
+                    {/* Virtual Assistant */}
+                    <View style={styles.card}>
+                        <View style={styles.badge}>
+                            <Text style={styles.badgeText}>Easy</Text>
+                        </View>
+
+                        <Text style={styles.cardTitle}>Virtual Assistant</Text>
+                        <Text style={styles.cardDesc}>
+                            Help businesses with administrative tasks
+                        </Text>
+
+                        <View style={styles.cardDetails}>
+                            <Text style={styles.detailText}>₱ 15–25/hour</Text>
+                            <Text style={styles.detailText}>10–20 hrs/week</Text>
+                        </View>
+
+                        <View style={styles.tagRow}>
+                            <Text style={styles.tag}>Admin</Text>
+                            <Text style={styles.tag}>Remote</Text>
+                            <Text style={styles.tag}>Flexible</Text>
+                        </View>
+
+                        <TouchableOpacity
+                            style={styles.learnMoreBtn}
+                            activeOpacity={0.7}
+                            onPress={() => console.log("Learn More clicked")}
+                        >
+                            <Text style={styles.learnMoreText}>Learn More</Text>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+
+                {/* Earnings Section */}
+                <View style={styles.earningsContainer}>
+                    <Text style={styles.earningsAmount}>₱1,200.00</Text>
+                    <Text style={styles.earningsText}>
+                        Total earned this month. <Text style={styles.detailsLink}>See details</Text>
                     </Text>
+                </View>
 
-                    <View style={styles.cardDetails}>
-                        <Text style={styles.detailText}>₱ 15–25/hour</Text>
-                        <Text style={styles.detailText}>10–20 hrs/week</Text>
+                {/* Bar Chart Placeholder */}
+                <View style={styles.chartContainer}>
+                    <View style={styles.chartRow}>
+                        {[40, 10, 50, 70, 20, 10, 5, 90, 80, 50, 30, 20].map((h, index) => (
+                            <View
+                                key={index}
+                                style={[styles.chartBar, { height: verticalScale(h) }]}
+                            />
+                        ))}
                     </View>
 
-                    <View style={styles.tagRow}>
-                        <Text style={styles.tag}>Admin</Text>
-                        <Text style={styles.tag}>Remote</Text>
-                        <Text style={styles.tag}>Flexible</Text>
+                    <View style={styles.monthRow}>
+                        {['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'].map(
+                            (m, i) => (
+                                <Text key={i} style={styles.monthText}>{m}</Text>
+                            )
+                        )}
                     </View>
-
-                    <TouchableOpacity 
-                        style={styles.learnMoreBtn}
-                        activeOpacity={0.7}
-                        onPress={() => console.log("Learn More clicked")}
-                    >
-                        <Text style={styles.learnMoreText}>Learn More</Text>
-                    </TouchableOpacity>
                 </View>
-            </View>
-
-            {/* Earnings Section */}
-            <View style={styles.earningsContainer}>
-                <Text style={styles.earningsAmount}>₱1,200.00</Text>
-                <Text style={styles.earningsText}>
-                    Total earned this month. <Text style={styles.detailsLink}>See details</Text>
-                </Text>
-            </View>
-
-            {/* Bar Chart Placeholder */}
-            <View style={styles.chartContainer}>
-                <View style={styles.chartRow}>
-                    {[40, 10, 50, 70, 20, 10, 5, 90, 80, 50, 30, 20].map((h, index) => (
-                        <View
-                            key={index}
-                            style={[styles.chartBar, { height: verticalScale(h) }]}
-                        />
-                    ))}
-                </View>
-
-                <View style={styles.monthRow}>
-                    {['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'].map(
-                        (m, i) => (
-                            <Text key={i} style={styles.monthText}>{m}</Text>
-                        )
-                    )}
-                </View>
-            </View>
+            </ScrollView>
         </SafeAreaView>
     );
 };
@@ -128,7 +130,10 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: COLORS.background,
+    },
+    scrollContent: {
         padding: scale(15),
+        paddingBottom: verticalScale(20),
     },
 
     /** SEARCH BAR */
