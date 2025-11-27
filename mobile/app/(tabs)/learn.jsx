@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -15,7 +16,7 @@ const Earn = () => {
         <SafeAreaView style={styles.container} edges={['left', 'right']}>
             <StatusBar style="light" backgroundColor={COLORS.background} translucent={false} />
             <View style={styles.content}>
-                <Text style={styles.title}>Earn</Text>
+                <Text style={styles.title}>Learn</Text>
                 <Text style={styles.subtitle}>Coming soon...</Text>
             </View>
         </SafeAreaView>
