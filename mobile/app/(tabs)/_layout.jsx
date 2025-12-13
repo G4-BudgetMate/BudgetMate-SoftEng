@@ -28,8 +28,9 @@ export default function TabsLayout() {
         tabBarShowLabel: false,
       }}
     >
+      {/* Main Tabs */}
       <Tabs.Screen
-        name="home"
+        name="home/index"
         options={{
           title: "Home",
           tabBarIcon: ({ color, focused }) => (
@@ -41,7 +42,7 @@ export default function TabsLayout() {
         }}
       />
       <Tabs.Screen
-        name="learn"
+        name="learn/index"
         options={{
           title: "Learn",
           tabBarIcon: ({ color, focused }) => (
@@ -53,7 +54,7 @@ export default function TabsLayout() {
         }}
       />
       <Tabs.Screen
-        name="earn"
+        name="earn/index"
         options={{
           title: "Earn",
           tabBarIcon: ({ color, focused }) => (
@@ -65,7 +66,7 @@ export default function TabsLayout() {
         }}
       />
       <Tabs.Screen
-        name="community"
+        name="community/index"
         options={{
           title: "Community",
           tabBarIcon: ({ color, focused }) => (
@@ -77,7 +78,7 @@ export default function TabsLayout() {
         }}
       />
       <Tabs.Screen
-        name="profile"
+        name="profile/index"
         options={{
           title: "Profile",
           tabBarIcon: ({ color, focused }) => (
@@ -88,6 +89,20 @@ export default function TabsLayout() {
           ),
         }}
       />
+
+      {/* Hidden Routes (prevent them from showing as tabs) */}
+      <Tabs.Screen name="home" options={{ href: null }} />
+      <Tabs.Screen name="learn" options={{ href: null }} />
+      <Tabs.Screen name="earn" options={{ href: null }} />
+      <Tabs.Screen name="community" options={{ href: null }} />
+      <Tabs.Screen name="profile" options={{ href: null }} />
+
+      <Tabs.Screen name="index" options={{ href: null }} />
+      <Tabs.Screen name="CreatePost" options={{ href: null }} />
+      <Tabs.Screen name="PostDetails" options={{ href: null }} />
+      <Tabs.Screen name="TestPhase1" options={{ href: null }} />
+      <Tabs.Screen name="admin-panel" options={{ href: null }} />
+      <Tabs.Screen name="admin-panel-styles" options={{ href: null }} />
     </Tabs>
   );
 }
