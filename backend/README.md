@@ -308,9 +308,9 @@ app.use(cors());
 
 ## 📚 Additional Documentation
 
-- **Database Schema:** See [Data_Collections_and_Model_Design.md](../Data_Collections_and_Model_Design.md)
+- **Database Schema:** See [../docs/Data_Collections_and_Model_Design.md](../docs/Data_Collections_and_Model_Design.md)
 - **Root README:** See [../README.md](../README.md)
-- **Criteria Documentation:** See [../BudgetMate_Criteria_Documentation.md](../BudgetMate_Criteria_Documentation.md)
+- **Full Documentation:** See [../docs/Documentation.md](../docs/Documentation.md)
 
 ---
 
